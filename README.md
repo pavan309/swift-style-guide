@@ -27,6 +27,7 @@ This guide was last updated for Swift 4.0 on February 14, 2018.
     - [4. Documentation/Comments](#4-documentationcomments)
         - [4.1 Documentation](#41-documentation)
         - [4.2 Other Commenting Guidelines](#42-other-commenting-guidelines)
+    - [5. Organization and Bundle Identifier](#5-organization-and-bundleidentifier)
 
 ## 1. Code Formatting
 
@@ -1068,3 +1069,11 @@ class Pirate {
 
 }
 ```
+
+## 5. Organization and Bundle Identifier
+
+* **5.1** Where an Xcode project is involved, the organization should be set to the respective client organisation name. If its an internal project then it needs to be set as `Mutual Mobile`.
+
+* **5.2** Bundle Identifier should be set as reverse DNS notation. For example, an internal app's bundle identifier at Mutual Mobile should be `com.mutualmobile.internalapp`.
+
+
