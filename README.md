@@ -650,6 +650,18 @@ class PirateManager {
 ```
 * Try avoiding usage of singleton unless its absolutely needed.
 
+* **3.7.5** Always use Swift's native types when available. Swift offers bridging to Objective-C so you can still use the full set of methods as needed.
+
+```swift
+// PREFERRED
+let width = 120.0                                    // Double
+let widthString = (width as NSNumber).stringValue    // String
+
+// NOT PREFERRED
+let width: NSNumber = 120.0                          // NSNumber
+let widthString: NSString = width.stringValue        // NSString
+```
+
 ### 3.8 Closures
 
 * **3.8.1** If the types of the parameters are obvious, it is OK to omit the type name, but being explicit is also OK. Sometimes readability is enhanced by adding clarifying detail and sometimes by taking repetitive parts away - use your best judgment and be consistent.
