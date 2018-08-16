@@ -123,28 +123,28 @@ if myFirstValue > (mySecondValue + myThirdValue)
 * **1.10** When calling a function that has many parameters, put each argument on a separate line with a single extra indentation.
 
 ```swift
-someFunctionWithManyArguments(
-    firstArgument: "Hello, I am a string",
-    secondArgument: resultFromSomeFunction(),
-    thirdArgument: someOtherLocalProperty)
+someFunctionWithManyArguments(firstArgument: "Hello, I am a string",
+                              secondArgument: resultFromSomeFunction(),
+                              thirdArgument: someOtherLocalProperty)
 ```
 
-* **1.11** When dealing with an implicit array or dictionary large enough to warrant splitting it into multiple lines, treat the `[` and `]` as if they were braces in a method, `if` statement, etc. Closures in a method should be treated similarly.
+* **1.11** When dealing with an implicit array or dictionary large enough to warrant splitting it into multiple lines, treat the `[` and `]` as if they were braces in a method, `if` statement, etc. Closures in a method should be treated similarly. For future readablity, give dictionaries, arrays a valid name before passing to another funtion
 
 ```swift
-someFunctionWithABunchOfArguments(
-    someStringArgument: "hello I am a string",
-    someArrayArgument: [
-        "dadada daaaa daaaa dadada daaaa daaaa dadada daaaa daaaa",
-        "string one is crazy - what is it thinking?"
-    ],
-    someDictionaryArgument: [
-        "dictionary key 1": "some value 1, but also some more text here",
-        "dictionary key 2": "some value 2"
-    ],
-    someClosure: { parameter1 in
-        print(parameter1)
-    })
+let stringsArray = [
+            "dadada daaaa daaaa dadada daaaa daaaa dadada daaaa daaaa",
+            "string one is crazy - what is it thinking?"
+]
+let stringsDictionary = [
+            "dictionary key 1": "some value 1, but also some more text here",
+            "dictionary key 2": "some value 2"
+]
+someFunctionWithABunchOfArguments(someStringArgument: "hello I am a string",
+                                  someArrayArgument: stringsArray,
+                                  someDictionaryArgument: stringsDictionary,
+                                  someClosure: { parameter1 in
+                                        print(parameter1)
+                                  })
 ```
 
 * **1.12** Prefer using local constants or other mitigation techniques to avoid multi-line predicates where possible.
