@@ -549,18 +549,6 @@ func handleProblem(problem: Problem) {
 
 * **3.4.5** Prefer lists of possibilities (e.g. `case 1, 2, 3:`) to using the `fallthrough` keyword where possible).
 
-* **3.4.6** If you have a default case that shouldn't be reached, preferably throw an error (or handle it some other similar way such as asserting).
-
-```swift
-func handleDigit(_ digit: Int) throws {
-    switch digit {
-    case 0, 1, 2, 3, 4, 5, 6, 7, 8, 9:
-        print("Yes, \(digit) is a digit!")
-    default:
-        throw Error(message: "The given number was not a digit.")
-    }
-}
-```
 
 ### 3.5 Optionals
 
