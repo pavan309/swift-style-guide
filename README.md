@@ -662,6 +662,20 @@ let width: NSNumber = 120.0                          // NSNumber
 let widthString: NSString = width.stringValue        // NSString
 ```
 
+* **3.7.6** Prefer the shortcut versions of type declarations over the full generics syntax.
+
+```swift
+// PREFERRED
+var deviceModels: [String]
+var employees: [Int: String]
+var faxNumber: Int?
+
+// NOT PREFERRED
+var deviceModels: Array<String>
+var employees: Dictionary<Int, String>
+var faxNumber: Optional<Int>
+```
+
 ### 3.8 Closures
 
 * **3.8.1** If the types of the parameters are obvious, it is OK to omit the type name, but being explicit is also OK. Sometimes readability is enhanced by adding clarifying detail and sometimes by taking repetitive parts away - use your best judgment and be consistent.
