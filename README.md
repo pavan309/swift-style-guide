@@ -648,6 +648,7 @@ class PirateManager {
     /* ... */
 }
 ```
+* Try avoiding usage of singleton unless its absolutely needed.
 
 ### 3.8 Closures
 
