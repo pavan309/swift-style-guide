@@ -168,6 +168,22 @@ if x == firstReallyReallyLongPredicateFunction()
 }
 ```
 
+* **1.13** Add the imports as required for the class in alphabetical order
+
+```swift
+// PREFERRED
+import CoreLocation
+import SpriteKit
+import ThirdPartyFramework
+import UIKit
+
+// NOT PREFERRED
+import ThirdPartyFramework
+import SpriteKit
+import UIKit
+import CoreLocation
+```
+
 ## 2. Naming
 
 * **2.1** There is no need for Objective-C style prefixing in Swift (e.g. use just `GuybrushThreepwood` instead of `LIGuybrushThreepwood`).
