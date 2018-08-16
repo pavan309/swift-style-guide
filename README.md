@@ -23,6 +23,7 @@ This guide was last updated for Swift 4.0 on February 14, 2018.
         - [3.9 Arrays](#39-arrays)
         - [3.10 Error Handling](#310-error-handling)
         - [3.11 Using `guard` Statements](#311-using-guard-statements)
+        - [3.12 Functions vs Methods](#312-functions-vs-methods)
     - [4. Documentation/Comments](#4-documentationcomments)
         - [4.1 Documentation](#41-documentation)
         - [4.2 Other Commenting Guidelines](#42-other-commenting-guidelines)
@@ -932,7 +933,6 @@ guard let thingThree = thingThree else {
 
 * **3.11.7** Don’t use one-liners for `guard` statements.
 
-
 ```swift
 // PREFERRED
 guard let thingOne = thingOne else {
@@ -941,6 +941,26 @@ guard let thingOne = thingOne else {
 
 // NOT PREFERRED
 guard let thingOne = thingOne else { return }
+```
+
+### 3.12 Functions vs Methods
+
+Free functions, which aren't attached to a class or type, should be used sparingly. When possible, prefer to use a method instead of a free function. This aids in readability and discoverability.
+
+Free functions are most appropriate when they aren't associated with any particular type or instance.
+
+```swift
+// PREFERRED
+let sorted = items.mergeSorted()  // easily discoverable
+rocket.launch()  // acts on the model
+
+// NOT PREFERRED
+let sorted = mergeSort(items)  // hard to discover
+launch(&rocket)
+
+// FREE FUNCTION EXCEPTIONS
+let tuples = zip(a, b)  // feels natural as a free function (symmetry)
+let value = max(x, y, z)  // another free function that feels natural
 ```
 
 ## 4. Documentation/Comments
