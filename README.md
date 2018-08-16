@@ -404,17 +404,16 @@ let lastName = name.lastName
 
 ```swift
 myFunctionWithEscapingClosure() { [weak self] (error) -> Void in
-    // you can do this
-
+    // you can do this if self is being used only once
     self?.doSomething()
 
-    // or you can do this
-
+    // do this if self is being used multiple time
     guard let strongSelf = self else {
         return
     }
 
     strongSelf.doSomething()
+    strongSelf.doSomethingHereTo()
 }
 ```
 
