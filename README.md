@@ -184,6 +184,35 @@ import UIKit
 import CoreLocation
 ```
 
+* **1.14** Make sure all `let`, `var`, `weak`, `@IBOutlet` variables in one place. Add one empty line at the top and bottom of each variables type.
+
+```swift
+// PREFERRED
+struct BookingViewController {
+    
+    let bookingManager: BookingManger
+    
+    var variableOne: Dictionary
+    var status: BookingStatus
+    
+    weak var delegate: BookingViewControllerDelegate?
+    
+    @IBOutlet var visitorHomeView: BookingView!
+    
+    // Rest of the code
+}
+
+// NOT PREFERRED
+struct BookingViewController {
+    var variableOne: Dictionary
+    let bookingManager: BookingManger
+    var status: BookingStatus
+    @IBOutlet var visitorHomeView: BookingView!
+    weak var delegate: BookingViewControllerDelegate?
+    // Rest of the code
+}
+```
+
 ## 2. Naming
 
 * **2.1** There is no need for Objective-C style prefixing in Swift (e.g. use just `GuybrushThreepwood` instead of `LIGuybrushThreepwood`).
