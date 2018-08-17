@@ -213,6 +213,8 @@ struct BookingViewController {
 }
 ```
 
+* **1.15** All `UIViewControlers` should have their own respective `UIViews` to hold all view related code.
+
 ## 2. Naming
 
 * **2.1** There is no need for Objective-C style prefixing in Swift (e.g. use just `GuybrushThreepwood` instead of `LIGuybrushThreepwood`).
